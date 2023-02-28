@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Your description goes here">
+	<meta name="keywords" content="one, two, three">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+	<title>Blank Template</title>
+
+</head>
+
+<body>
+	<h1 class="box" style="background-color: {{color_two}}; color: {{color_one}}">*** Checkerboard ***</h1>
+
+	<table>
+		<tbody>
+			{% for i in range(0, row) %}
+			<tr>
+				{% for y in range(0,column) %}
+				{% if (y+i) % 2 == 0 %}
+				<td style="background-color: {{color_one}}"></td>
+				{% else %}
+				<td style="background-color: {{color_two}}"></td>
+				{% endif %}
+				{% endfor %}
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
